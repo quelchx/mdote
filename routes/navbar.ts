@@ -23,11 +23,11 @@ const links: Array<NavItem> = [
         subLabel: "Frequently asked questions",
         href: "/docs/faq",
       },
-      {
-        label: "Contact",
-        subLabel: "Have a question or a concern?",
-        href: "/contact",
-      },
+      // {
+      //   label: "Contact",
+      //   subLabel: "Have a question or a concern?",
+      //   href: "/contact",
+      // },
    
     ],
   },

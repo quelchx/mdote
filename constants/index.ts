@@ -34,25 +34,9 @@ export const meta: MetaData = {
     title: "Mdote - Home Page",
     desc: "Mdote, a simple, elegant markdown text-editor",
   },
-  login: {
-    title: "Login to your account",
-    desc: "Mdote user login page",
-  },
-  register: {
-    title: "Register your account",
-    desc: "Mdote user registration page",
-  },
   editor: {
     title: "Mdote",
     desc: "Mdote Editor - The Markdown note taking editor",
-  },
-  themes: {
-    title: "Mdote Themes",
-    desc: "Browse the latest and most popular Mdote themes",
-  },
-  fonts: {
-    title: "Mdote Fonts",
-    desc: "Browse the latest and most popular Mdote fonts",
   },
   docs: {
     title: "Mdote Documents",

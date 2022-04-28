@@ -14,7 +14,7 @@ interface LinkItemProps {
 const routes: Array<LinkItemProps> = [
   { name: "Documents", icon: FiBookOpen, path: "/docs" },
   { name: "Questions", icon: FiInfo, path: "/docs/faq" },
-  { name: "Contact", icon: FiMail, path: "/contact" },
+  // { name: "Contact", icon: FiMail, path: "/contact" },
 ];
 
 export default routes;
