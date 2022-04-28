@@ -12,6 +12,7 @@ import {
 
 import { FiMenu } from "react-icons/fi";
 import ThemeSwitch from "../ToggleTheme/Switch";
+import AnimateSection from "../AnimateSection/AnimateSection";
 
 interface EditorMobileMenuProps extends FlexProps {
   onOpen: () => void;
@@ -41,10 +42,11 @@ const EditorMobileMenu = ({ onOpen, ...rest }: EditorMobileMenuProps) => {
       <Box display={{ base: "flex", md: "none" }}>
         <chakra.p fontSize="3xl">Mdote</chakra.p>
       </Box>
-
-      <HStack spacing={{ base: "0", md: "6" }}>
-        <ThemeSwitch />
-      </HStack>
+      <AnimateSection animation="fade-down" delay={400} duration={400}>
+        <HStack spacing={{ base: "0", md: "6" }}>
+          <ThemeSwitch />
+        </HStack>
+      </AnimateSection>
     </Flex>
   );
 };

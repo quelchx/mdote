@@ -6,4 +6,5 @@ export { default as Downloader } from "./Downloader/Downloader";
 export { default as LayoutWrapper } from "./Layout/LayoutWrapper";
 export { default as Questions } from "./Questions/Questions";
 export { default as ContactForm } from "./Contact/ContactForm";
-export { default as DocumentsHeading } from './Heading/DocumentsHeading'
+export { default as AnimateSection } from "./AnimateSection/AnimateSection";
+export { default as Converter } from "./Converter/Converter";

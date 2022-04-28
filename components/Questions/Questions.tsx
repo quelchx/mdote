@@ -20,7 +20,7 @@ const FilteredQuestions = ({ method }: FilteredQuestionsProps) => {
         .map((el) => {
           return (
             <>
-              <chakra.h5 mt={10} mb={3} fontWeight="semibold">
+              <chakra.h5 key={el.ques} mt={10} mb={3} fontWeight="semibold">
                 {el.ques}
               </chakra.h5>
               <chakra.p fontWeight={500}>{el.ans}</chakra.p>

@@ -3,6 +3,7 @@ import { Button, Flex, Image, Link, Stack, Text } from "@chakra-ui/react";
 import MdoteHeading from "../Heading/MdoteHeading";
 
 import NextLink from "next/link";
+import AnimateSection from "../AnimateSection/AnimateSection";
 
 const HomeHero = () => {
   return (
@@ -18,6 +19,8 @@ const HomeHero = () => {
             Mdote is a simplistic markdown based note taking editor. Leverage
             the powers of markdown on the fly and save to your local machine.
           </Text>
+          <AnimateSection animation='fade-up' duration={800} delay={700}>
+
           <Stack direction={{ base: "column", md: "row" }} spacing={4}>
             <Button
               rounded={"full"}
@@ -37,6 +40,7 @@ const HomeHero = () => {
               </NextLink>
             </Button>
           </Stack>
+          </AnimateSection>
         </Stack>
       </Flex>
       <Flex flex={1} display={{ base: "none", md: "flex" }}>

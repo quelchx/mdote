@@ -17,6 +17,7 @@ import MdoteHeading from "../Heading/MdoteHeading";
 import EditorSidebarLink from "./EditorSidebarLink";
 
 import routes from "../../routes/sidebar";
+import AnimateSection from "../AnimateSection/AnimateSection";
 
 interface EditorSidebarProps extends BoxProps {
   onClose: () => void;
@@ -44,41 +45,50 @@ const EditorSidebar = ({ onClose, ...rest }: EditorSidebarProps) => {
         </Box>
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
-      {routes.map((link) => (
-        <EditorSidebarLink path={link.path} key={link.name} icon={link.icon}>
-          {link.name}
-        </EditorSidebarLink>
+      {routes.map((link, idx) => (
+        <AnimateSection
+          key={link.name}
+          animation="fade-down"
+          delay={(idx + 1) * 400}
+          duration={500}
+        >
+          <EditorSidebarLink path={link.path} icon={link.icon}>
+            {link.name}
+          </EditorSidebarLink>
+        </AnimateSection>
       ))}
       <Link
         as={"a"}
         href="https://github.com/quelchx/mdote"
-        target='_blank'
+        target="_blank"
         referrerPolicy="origin"
         style={{ textDecoration: "none" }}
         _focus={{ boxShadow: "none" }}
       >
-        <Flex
-          align="center"
-          p="4"
-          mx="4"
-          borderRadius="lg"
-          role="group"
-          cursor="pointer"
-          _hover={{
-            bg: "green.400",
-            color: "white",
-          }}
-        >
-          <Icon
-            mr="4"
-            fontSize="16"
-            _groupHover={{
+        <AnimateSection animation="fade-up" delay={1600} duration={500}>
+          <Flex
+            align="center"
+            p="4"
+            mx="4"
+            borderRadius="lg"
+            role="group"
+            cursor="pointer"
+            _hover={{
+              bg: "green.400",
               color: "white",
             }}
-            as={FiGithub}
-          />
-          View Repository
-        </Flex>
+          >
+            <Icon
+              mr="4"
+              fontSize="16"
+              _groupHover={{
+                color: "white",
+              }}
+              as={FiGithub}
+            />
+            View Repository
+          </Flex>
+        </AnimateSection>
       </Link>
     </Box>
   );

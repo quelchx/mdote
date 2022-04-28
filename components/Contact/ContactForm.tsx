@@ -21,6 +21,7 @@ import {
 import React from "react";
 import { BsGithub, BsLinkedin, BsPerson, BsTwitter } from "react-icons/bs";
 import { MdEmail, MdOutlineEmail } from "react-icons/md";
+import AnimateSection from "../AnimateSection/AnimateSection";
 
 const confetti = {
   light: {
@@ -41,179 +42,194 @@ export default function ContactFormWithSocialButtons() {
   const { hasCopied, onCopy } = useClipboard("quelchx@gmail.com");
 
   return (
-    <Flex
-      align="center"
-      justify="center"
-      css={{
-        backgroundImage: useColorModeValue(CONFETTI_LIGHT, CONFETTI_DARK),
-        backgroundAttachment: "fixed",
-      }}
-      id="contact"
-    >
-      <Box
-        borderRadius="lg"
-        m={{ base: 5, md: 16, lg: 10 }}
-        p={{ base: 5, lg: 16 }}
+    <AnimateSection animation="fade-down" delay={500} duration={400}>
+      <Flex
+        align="center"
+        justify="center"
+        css={{
+          backgroundImage: useColorModeValue(CONFETTI_LIGHT, CONFETTI_DARK),
+          backgroundAttachment: "fixed",
+        }}
+        id="contact"
       >
-        <Box>
-          <VStack spacing={{ base: 4, md: 8, lg: 20 }}>
-            <Heading
-              fontSize={{
-                base: "3xl",
-                md: "4xl",
-              }}
-            >
-              Question or Concern?
-            </Heading>
-            <chakra.p>
-              If you have a question, comment, suggestion or concern, please
-              feel free to contact me using this form and I will get back to you.
-            </chakra.p>
+        <Box
+          borderRadius="lg"
+          m={{ base: 5, md: 16, lg: 10 }}
+          p={{ base: 5, lg: 16 }}
+        >
+          <Box>
+            <VStack spacing={{ base: 4, md: 8, lg: 20 }}>
+              <Heading
+                fontSize={{
+                  base: "3xl",
+                  md: "4xl",
+                }}
+              >
+                Question or Concern?
+              </Heading>
+              <chakra.p>
+                If you have a question, comment, suggestion or concern, please
+                feel free to contact me using this form and I will get back to
+                you.
+              </chakra.p>
 
-            <Stack
-              spacing={{ base: 4, md: 8, lg: 20 }}
-              direction={{ base: "column", md: "row" }}
-            >
               <Stack
-                align="center"
-                justify="space-around"
-                direction={{ base: "row", md: "column" }}
+                spacing={{ base: 4, md: 8, lg: 20 }}
+                direction={{ base: "column", md: "row" }}
               >
-                <Tooltip
-                  label={hasCopied ? "Email Copied!" : "Copy Email"}
-                  closeOnClick={false}
-                  hasArrow
+                <Stack
+                  align="center"
+                  justify="space-around"
+                  direction={{ base: "row", md: "column" }}
                 >
-                  <IconButton
-                    aria-label="email"
-                    variant="ghost"
-                    size="lg"
-                    fontSize="3xl"
-                    icon={<MdEmail />}
-                    _hover={{
-                      bg: "green.500",
-                      color: "white",
-                    }}
-                    onClick={onCopy}
-                    isRound
-                  />
-                </Tooltip>
-
-                <Link
-                  href="http://github.com/quelchx/mdote"
-                  target="_blank"
-                  referrerPolicy="origin"
-                >
-                  <IconButton
-                    aria-label="github"
-                    variant="ghost"
-                    size="lg"
-                    fontSize="3xl"
-                    icon={<BsGithub />}
-                    _hover={{
-                      bg: "green.500",
-                      color: "white",
-                    }}
-                    isRound
-                  />
-                </Link>
-
-                <Link
-                  href="http://twitter.com/ericquelch"
-                  target="_blank"
-                  referrerPolicy="origin"
-                >
-                  <IconButton
-                    aria-label="twitter"
-                    variant="ghost"
-                    size="lg"
-                    icon={<BsTwitter size="28px" />}
-                    _hover={{
-                      bg: "green.500",
-                      color: "white",
-                    }}
-                    isRound
-                  />
-                </Link>
-
-                <Link
-                  href="https://www.linkedin.com/in/eric-quelch-768861201/"
-                  target="_blank"
-                  referrerPolicy="origin"
-                >
-                  <IconButton
-                    aria-label="linkedin"
-                    variant="ghost"
-                    size="lg"
-                    icon={<BsLinkedin size="28px" />}
-                    _hover={{
-                      bg: "green.500",
-                      color: "white",
-                    }}
-                    isRound
-                  />
-                </Link>
-              </Stack>
-
-              <Box
-                bg={useColorModeValue("white", "gray.700")}
-                borderRadius="lg"
-                p={8}
-                minWidth={"380px"}
-                color={useColorModeValue("gray.700", "whiteAlpha.900")}
-                shadow="base"
-              >
-                <VStack spacing={5}>
-                  <FormControl isRequired>
-                    <FormLabel>Name</FormLabel>
-
-                    <InputGroup>
-                      <InputLeftElement children={<BsPerson />} />
-                      <Input type="text" name="name" placeholder="Your Name" />
-                    </InputGroup>
-                  </FormControl>
-
-                  <FormControl isRequired>
-                    <FormLabel>Email</FormLabel>
-
-                    <InputGroup>
-                      <InputLeftElement children={<MdOutlineEmail />} />
-                      <Input
-                        type="email"
-                        name="email"
-                        placeholder="Your Email"
-                      />
-                    </InputGroup>
-                  </FormControl>
-
-                  <FormControl isRequired>
-                    <FormLabel>Message</FormLabel>
-
-                    <Textarea
-                      name="message"
-                      placeholder="Your Message"
-                      rows={6}
-                      resize="none"
-                    />
-                  </FormControl>
-
-                  <Button
-                    colorScheme="blue"
-                    bg="blue.400"
-                    color="white"
-                    _hover={{
-                      bg: "blue.500",
-                    }}
-                    isFullWidth
+                  <Tooltip
+                    label={hasCopied ? "Email Copied!" : "Copy Email"}
+                    closeOnClick={false}
+                    hasArrow
                   >
-                    Send Message
-                  </Button>
-                </VStack>
-              </Box>
-            </Stack>
-          </VStack>
+                    <IconButton
+                      aria-label="email"
+                      variant="ghost"
+                      size="lg"
+                      fontSize="3xl"
+                      icon={<MdEmail />}
+                      _hover={{
+                        bg: "green.500",
+                        color: "white",
+                      }}
+                      onClick={onCopy}
+                      isRound
+                    />
+                  </Tooltip>
+
+                  <Link
+                    href="http://github.com/quelchx/mdote"
+                    target="_blank"
+                    referrerPolicy="origin"
+                  >
+                    <IconButton
+                      aria-label="github"
+                      variant="ghost"
+                      size="lg"
+                      fontSize="3xl"
+                      icon={<BsGithub />}
+                      _hover={{
+                        bg: "green.500",
+                        color: "white",
+                      }}
+                      isRound
+                    />
+                  </Link>
+
+                  <Link
+                    href="http://twitter.com/ericquelch"
+                    target="_blank"
+                    referrerPolicy="origin"
+                  >
+                    <IconButton
+                      aria-label="twitter"
+                      variant="ghost"
+                      size="lg"
+                      icon={<BsTwitter size="28px" />}
+                      _hover={{
+                        bg: "green.500",
+                        color: "white",
+                      }}
+                      isRound
+                    />
+                  </Link>
+
+                  <Link
+                    href="https://www.linkedin.com/in/eric-quelch-768861201/"
+                    target="_blank"
+                    referrerPolicy="origin"
+                  >
+                    <IconButton
+                      aria-label="linkedin"
+                      variant="ghost"
+                      size="lg"
+                      icon={<BsLinkedin size="28px" />}
+                      _hover={{
+                        bg: "green.500",
+                        color: "white",
+                      }}
+                      isRound
+                    />
+                  </Link>
+                </Stack>
+
+                <Box
+                  as="form"
+                  method="POST"
+                  name="contact"
+                  data-netlify="true"
+                  netlify-honeypot="bot-field"
+                  bg={useColorModeValue("white", "gray.700")}
+                  borderRadius="lg"
+                  p={8}
+                  minWidth={"380px"}
+                  color={useColorModeValue("gray.700", "whiteAlpha.900")}
+                  shadow="base"
+                >
+                  <input type="hidden" name="form-name" value="contact" />
+                  <VStack spacing={5}>
+                    <FormControl isRequired>
+                      <FormLabel>Name</FormLabel>
+
+                      <InputGroup>
+                        <InputLeftElement children={<BsPerson />} />
+                        <Input
+                          type="text"
+                          name="name"
+                          placeholder="Your Name"
+                        />
+                      </InputGroup>
+                    </FormControl>
+
+                    <FormControl isRequired>
+                      <FormLabel>Email</FormLabel>
+
+                      <InputGroup>
+                        <InputLeftElement children={<MdOutlineEmail />} />
+                        <Input
+                          type="email"
+                          name="email"
+                          placeholder="Your Email"
+                        />
+                      </InputGroup>
+                    </FormControl>
+
+                    <FormControl isRequired>
+                      <FormLabel>Message</FormLabel>
+
+                      <Textarea
+                        name="message"
+                        placeholder="Your Message"
+                        rows={6}
+                        resize="none"
+                      />
+                    </FormControl>
+                    <chakra.div position={"relative"}>
+                      <div data-netlify-recaptcha="true"></div>
+                    </chakra.div>
+                    <Button
+                      colorScheme="blue"
+                      bg="blue.400"
+                      color="white"
+                      _hover={{
+                        bg: "blue.500",
+                      }}
+                      isFullWidth
+                    >
+                      Send Message
+                    </Button>
+                  </VStack>
+                </Box>
+              </Stack>
+            </VStack>
+          </Box>
         </Box>
-      </Box>
-    </Flex>
+      </Flex>
+    </AnimateSection>
   );
 }

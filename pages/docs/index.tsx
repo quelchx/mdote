@@ -4,9 +4,20 @@ import { GetStaticProps, NextPage } from "next";
 import fs from "fs";
 import path from "path";
 
-import { DocumentsHeading, LayoutWrapper } from "../../components";
-import Converter from "../../components/Converter/Converter";
-import { Box, chakra } from "@chakra-ui/react";
+import { chakra } from "@chakra-ui/react";
+import { AnimateSection, Converter, LayoutWrapper } from "../../components";
+
+const DocumentsPage: NextPage = ({ document }: { document: string }) => {
+  return (
+    <LayoutWrapper title="Mdote Documents">
+      <chakra.div display="flex" justifyContent={"center"} m={12}>
+        <AnimateSection animation="fade-down" delay={200} duration={500}>
+          <Converter markdown={document} />
+        </AnimateSection>
+      </chakra.div>
+    </LayoutWrapper>
+  );
+};
 
 export const getStaticProps: GetStaticProps = () => {
   const document = fs.readFileSync(
@@ -18,21 +29,6 @@ export const getStaticProps: GetStaticProps = () => {
       document,
     },
   };
-};
-
-const DocumentsPage: NextPage = ({ document }: { document: string }) => {
-  console.log(document);
-  return (
-    <LayoutWrapper title="Mdote Documents">
-      <chakra.div
-        display="flex"
-        justifyContent={"center"}
-        m={12}
-      >
-        <Converter markdown={document} />
-      </chakra.div>
-    </LayoutWrapper>
-  );
 };
 
 export default DocumentsPage;
