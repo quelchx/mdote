@@ -157,74 +157,76 @@ export default function ContactFormWithSocialButtons() {
                     />
                   </Link>
                 </Stack>
-
-                <Box
-                  as="form"
+                <form
                   method="POST"
                   name="contact"
                   data-netlify="true"
                   netlify-honeypot="bot-field"
-                  bg={useColorModeValue("white", "gray.700")}
-                  borderRadius="lg"
-                  p={8}
-                  minWidth={"380px"}
-                  color={useColorModeValue("gray.700", "whiteAlpha.900")}
-                  shadow="base"
                 >
-                  <input type="hidden" name="form-name" value="contact" />
-                  <VStack spacing={5}>
-                    <FormControl isRequired>
-                      <FormLabel>Name</FormLabel>
+                  <Box
+                    bg={useColorModeValue("white", "gray.700")}
+                    borderRadius="lg"
+                    p={8}
+                    minWidth={"380px"}
+                    color={useColorModeValue("gray.700", "whiteAlpha.900")}
+                    shadow="base"
+                  >
+                    <input type="hidden" name="form-name" value="contact" />
+                    <VStack spacing={5}>
+                      <FormControl isRequired>
+                        <FormLabel>Name</FormLabel>
 
-                      <InputGroup>
-                        <InputLeftElement children={<BsPerson />} />
-                        <Input
-                          type="text"
-                          name="name"
-                          placeholder="Your Name"
+                        <InputGroup>
+                          <InputLeftElement children={<BsPerson />} />
+                          <Input
+                            type="text"
+                            name="name"
+                            placeholder="Your Name"
+                          />
+                        </InputGroup>
+                      </FormControl>
+
+                      <FormControl isRequired>
+                        <FormLabel>Email</FormLabel>
+
+                        <InputGroup>
+                          <InputLeftElement children={<MdOutlineEmail />} />
+                          <Input
+                            type="email"
+                            name="email"
+                            placeholder="Your Email"
+                          />
+                        </InputGroup>
+                      </FormControl>
+
+                      <FormControl isRequired>
+                        <FormLabel>Message</FormLabel>
+
+                        <Textarea
+                          name="message"
+                          placeholder="Your Message"
+                          rows={6}
+                          resize="none"
                         />
-                      </InputGroup>
-                    </FormControl>
-
-                    <FormControl isRequired>
-                      <FormLabel>Email</FormLabel>
-
-                      <InputGroup>
-                        <InputLeftElement children={<MdOutlineEmail />} />
-                        <Input
-                          type="email"
-                          name="email"
-                          placeholder="Your Email"
-                        />
-                      </InputGroup>
-                    </FormControl>
-
-                    <FormControl isRequired>
-                      <FormLabel>Message</FormLabel>
-
-                      <Textarea
-                        name="message"
-                        placeholder="Your Message"
-                        rows={6}
-                        resize="none"
-                      />
-                    </FormControl>
-                    <chakra.div position={"relative"}>
-                      <div data-netlify-recaptcha="true"></div>
-                    </chakra.div>
-                    <Button
-                      colorScheme="blue"
-                      bg="blue.400"
-                      color="white"
-                      _hover={{
-                        bg: "blue.500",
-                      }}
-                      isFullWidth
-                    >
-                      Send Message
-                    </Button>
-                  </VStack>
-                </Box>
+                      </FormControl>
+                      <chakra.div position={"relative"}>
+                        <div data-netlify-recaptcha="true"></div>
+                      </chakra.div>
+                      <Button
+                        colorScheme="blue"
+                        type="submit"
+                        bg="blue.400"
+                        color="white"
+                        _hover={{
+                          bg: "blue.500",
+                        }}
+                        isFullWidth
+                      >
+                        Send Message
+                      </Button>
+                    </VStack>
+                  </Box>
+                </form>
               </Stack>
             </VStack>
           </Box>
