@@ -1,12 +1,11 @@
 import React from "react";
+import Navigation from "../Navbar/Navbar";
 import MetaContainer, { MetaProps } from "./MetaContainer";
 
-// import Navigation from "../components/Navigation/Navigation";
-// import Footer from "../components/Footer/Footer";
-
-const LayoutWrapper = ({ children, ...overrides }:MetaProps) => {
+const LayoutWrapper = ({ children, ...overrides }: MetaProps) => {
   return (
     <MetaContainer {...overrides}>
+      <Navigation />
       {children}
     </MetaContainer>
   );

@@ -7,7 +7,7 @@ import {
 import React from "react";
 
 const MdoteHeading = ({ children }: { children?: React.ReactNode }) => {
-  const underline = useColorModeValue("green.400", "green.500");
+  const underline = useColorModeValue("blue.400", "blue.500");
 
   return (
     <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>

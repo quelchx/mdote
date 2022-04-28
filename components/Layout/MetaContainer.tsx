@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 
-interface MetaState {
+export interface MetaState {
   title: string;
   desc: string;
   image?: string;

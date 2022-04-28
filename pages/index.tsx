@@ -1,11 +1,11 @@
 import { NextPage } from "next";
 
-import LayoutWrapper from "../layout/MetaContainer";
-import { HomeHero } from "../components";
+import { HomeHero, LayoutWrapper } from "../components";
+import Navigation from "../components/Navbar/Navbar";
 
 const HomePage: NextPage = () => {
   return (
-    <LayoutWrapper>
+    <LayoutWrapper title='Home Page'>
       <HomeHero />
     </LayoutWrapper>
   );

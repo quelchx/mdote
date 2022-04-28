@@ -1,9 +1,9 @@
 import { IconType } from "react-icons";
 
 import {
-  FiHome,
-  FiSettings,
-  FiStar,
+  FiBookOpen,
+  FiInfo,
+  FiMail
 } from "react-icons/fi";
 
 interface LinkItemProps {
@@ -12,9 +12,9 @@ interface LinkItemProps {
   path: string;
 }
 const routes: Array<LinkItemProps> = [
-  { name: "Home", icon: FiHome, path: "/" },
-  { name: "Your Notes", icon: FiStar, path: "/app/user/notes" },
-  { name: "Settings", icon: FiSettings, path: "/app/user/settings" },
+  { name: "Documents", icon: FiBookOpen, path: "/docs" },
+  { name: "Questions", icon: FiInfo, path: "/docs/faq" },
+  { name: "Contact", icon: FiMail, path: "/contact" },
 ];
 
 export default routes;

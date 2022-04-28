@@ -1,10 +1,13 @@
 import { NextPage } from "next";
-import MetaContainer from "../../layout/MetaContainer";
+import { EditorContainer, EditorInputArea } from "../../components";
+import MetaContainer from "../../components/Layout/MetaContainer";
 
 const MdotePage: NextPage = () => {
   return (
     <MetaContainer>
-      <div>Editor</div>
+      <EditorContainer>
+        <EditorInputArea />
+      </EditorContainer>
     </MetaContainer>
   );
 };

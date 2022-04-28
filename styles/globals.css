@@ -1,0 +1,114 @@
+* {
+  font-family: "Comic Neue", "sans-serif";
+}
+
+::placeholder {
+  font-weight: 500;
+  color: #47a5bf !important;
+}
+
+.downloader {
+  width: 500px;
+  min-height: 128px;
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  max-height: 700px;
+  overflow-y: auto;
+}
+
+.downloader .card-header {
+  color: #fff;
+  background-color: green;
+  padding: 4px;
+}
+
+.downloader .card .card-group {
+  max-height: 300px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.md h1 {
+  font-size: 36px;
+}
+
+.md h2 {
+  font-size: 32px;
+}
+
+.md h3 {
+  font-size: 28px;
+}
+
+.md h4 {
+  font-size: 24px;
+}
+
+.md h5 {
+  font-size: 20px;
+}
+
+.md p {
+  line-height: 24px;
+  margin: 4px 0px;
+  padding: 4px 0px;
+}
+
+.md a {
+  color: blue;
+  text-decoration: underline;
+}
+
+.md div {
+  border-radius: 12px;
+  margin: 8px 0px;
+}
+
+.md ul,
+.md ol,
+.md dl {
+  margin: 16px 0px;
+  padding-left: 32px;
+}
+
+.md blockquote {
+  color: white;
+  border: 1px solid #47a5bf;
+  background-color: #47a5bf;
+  padding-left: 8px;
+}
+
+.md a {
+  color: inherit;
+}
+
+.md a:visited {
+  color: #47a5bf !important;
+}
+
+.md ul {
+  list-style: disc;
+}
+
+.md ol {
+  list-style:list-decimal;
+}
+
+.md li p:last-child {
+  margin: 0;
+}
+
+.md img {
+  max-width: 100%;
+}
+
+::-moz-selection {
+  background-color: #47a5bf;
+  color: white;
+}
+
+::selection {
+  background-color: #47a5bf;
+  color: white;
+}

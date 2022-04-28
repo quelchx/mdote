@@ -2,3 +2,8 @@ export { default as HomeHero } from "./Hero/HomeHero";
 export { default as MdoteHeading } from "./Heading/MdoteHeading";
 export { default as EditorContainer } from "./Editor/EditorContainer";
 export { default as EditorInputArea } from "./Editor/EditorInputArea";
+export { default as Downloader } from "./Downloader/Downloader";
+export { default as LayoutWrapper } from "./Layout/LayoutWrapper";
+export { default as Questions } from "./Questions/Questions";
+export { default as ContactForm } from "./Contact/ContactForm";
+export { default as DocumentsHeading } from './Heading/DocumentsHeading'
