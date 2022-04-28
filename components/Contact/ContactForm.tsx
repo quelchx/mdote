@@ -159,6 +159,7 @@ export default function ContactFormWithSocialButtons() {
                 </Stack>
                 <form
                   method="POST"
+                  action="/contact"
                   name="contact"
                   data-netlify="true"
                   netlify-honeypot="bot-field"
@@ -179,6 +180,8 @@ export default function ContactFormWithSocialButtons() {
                         <InputGroup>
                           <InputLeftElement children={<BsPerson />} />
                           <Input
+                            as='input'
+
                             type="text"
                             name="name"
                             placeholder="Your Name"
@@ -192,6 +195,7 @@ export default function ContactFormWithSocialButtons() {
                         <InputGroup>
                           <InputLeftElement children={<MdOutlineEmail />} />
                           <Input
+                          as='input'
                             type="email"
                             name="email"
                             placeholder="Your Email"
@@ -203,6 +207,7 @@ export default function ContactFormWithSocialButtons() {
                         <FormLabel>Message</FormLabel>
 
                         <Textarea
+                          as="textarea"
                           name="message"
                           placeholder="Your Message"
                           rows={6}
